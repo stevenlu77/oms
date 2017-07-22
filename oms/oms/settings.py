@@ -25,7 +25,7 @@ SECRET_KEY = '4h6=k5h@_b4wsyo!rpy$cj3dx*09klh5b#ncxxn9ux!u!=2w8j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['119.23.244.1']
 
 
 # Application definition
@@ -118,3 +118,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# add aliyun ecs folder @ CentOS 7.3
+STATICFILES_FINDERS = (
+              'django.contrib.staticfiles.finders.FileSystemFinder',
+              'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+              #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+STATICFILES_DIRS = ('/var/www/html/oms/static/css',
+              '/var/www/html/oms/static/bootstrap',
+               '/var/www/html/oms/static/images',
+               '/var/www/html/oms/static/js',
+)
